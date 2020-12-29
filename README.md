@@ -5,6 +5,8 @@ example to execute:
 * npx ts-node basic/01_init_observable.ts
 * npx ts-node basic/04_cold_observable.ts
 
+# opeators
+* https://rxmarbles.com/
 
 ## sources
 * https://www.youtube.com/watch?v=ACPClkuK-D0
