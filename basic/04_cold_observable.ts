@@ -3,7 +3,9 @@ import { from, Observable } from 'rxjs';
 // cold vs hot observable
 // => an observable is a data-stream, that gives data over a time
 // the example shown below is a cold observable
-// cold means unicast
+
+// cold == unicast
+
 // an observable starts running as soon as there is a subscriber
 //   => compared to a Promise => a Promise starts running as soon as it is created => a Promise is hot
 //   => in this context observable addresses the class "Observable" unlike the class "Subject" which is also an observable

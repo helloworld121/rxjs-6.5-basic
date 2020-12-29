@@ -1,7 +1,9 @@
 # rxjs-6.5-basic
 basic examples for rxjs
 
-execute using:  npx ts-node basic/01_init_observable.ts
+example to execute:  
+* npx ts-node basic/01_init_observable.ts
+* npx ts-node basic/04_cold_observable.ts
 
 
 ## sources
