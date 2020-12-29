@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 
 // EXECUTION CONTEXT => is always there
 
-// Subject => AsyncSubject/BehaviourSubject/ReplaySubject
+// Subject => types: Subject/AsyncSubject/BehaviourSubject/ReplaySubject
 
 // compared to class "Observable"
 // => an observable will be executed as soon as someone subscribes
