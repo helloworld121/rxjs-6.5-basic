@@ -6,7 +6,7 @@ import { from, Observable } from 'rxjs';
 // complete => observable completes without error => no more values will be emitted AND observers will auto-unsubscribe
 
 // 1) Observable constructor
-const $source = new Observable(observer => {
+const source1$ = new Observable(observer => {
     observer.next('Value 1');
     observer.next('Value 2');
     // complete observable
@@ -18,9 +18,9 @@ const $source = new Observable(observer => {
     };
 });
 
-$source.subscribe(v => console.log('Received Value:', v));
+source1$.subscribe(v => console.log('Received Value:', v));
 
 // 2) Creation operator => alternative to 1) without cleanup function
-const $source2 = from(['Value 1', 'Value 2']);
+const source2$ = from(['Value 1', 'Value 2']);
 
-$source2.subscribe(v => console.log('Received Value:', v));
+source2$.subscribe(v => console.log('Received Value:', v));

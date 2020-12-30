@@ -15,7 +15,7 @@ import { from, Observable } from 'rxjs';
 // => EACH time we subscribe we gonna get the same values
 //    => this means, every subscriber gets its own execution context
 
-const $source = new Observable(observer => {
+const source1$ = new Observable(observer => {
     observer.next('Value 1');
     observer.next('Value 2');
     observer.complete();
@@ -37,12 +37,12 @@ const $source = new Observable(observer => {
 // 2) this means every time I subscribe the function is called
 // 3) and only if I subscribe the function will be called, otherwise nothing happens
 
-$source.subscribe(v => console.log('[1] Received Value:', v));
-$source.subscribe(v => console.log('[2] Received Value:', v));
-$source.subscribe(v => console.log('[3] Received Value:', v));
+source1$.subscribe(v => console.log('[1] Received Value:', v));
+source1$.subscribe(v => console.log('[2] Received Value:', v));
+source1$.subscribe(v => console.log('[3] Received Value:', v));
 
 // this examples misses the cleanup function, therefore we don't see it in the log
-const $source2 = from(['Value 1', 'Value 2']);
-$source2.subscribe(v => console.log('[4] Received Value:', v));
-$source2.subscribe(v => console.log('[5] Received Value:', v));
-$source2.subscribe(v => console.log('[6] Received Value:', v));
+const source2$ = from(['Value 1', 'Value 2']);
+source2$.subscribe(v => console.log('[4] Received Value:', v));
+source2$.subscribe(v => console.log('[5] Received Value:', v));
+source2$.subscribe(v => console.log('[6] Received Value:', v));

@@ -6,7 +6,7 @@ import { take } from 'rxjs/operators';
 //   2) this allows the call of the "cleanup" function
 //   => if the Interval won't be killed in the cleanup-function it will continue to "emit"
 //      => to test this remove "clearInterval"
-const $source = new Observable(observer => {
+const source$ = new Observable(observer => {
     observer.next('Value 1');
 
     let count = 2;
@@ -27,7 +27,7 @@ const $source = new Observable(observer => {
     };
 });
 
-$source
+source$
     // the operator "take" is also a Observable,
     //   1) it will subscribe on our "source"-Observable
     //   2) and replaces our "source"-Observable

@@ -16,28 +16,28 @@ import { BehaviorSubject } from 'rxjs';
 // use-case: we want to know if a user is logged in
 // => this is possible because we always ask for the current value by using "$source.value"
 
-const $source = new BehaviorSubject<string>('Initial');
+const source$ = new BehaviorSubject<string>('Initial');
 
-const sub1 = $source.subscribe({
+const sub1 = source$.subscribe({
     next: v => console.log('[1] next:', v),
     error: err => console.log('[1] error:', err),
     complete: () => console.log('[1] complete!'),
 });
 
-$source.next('Value 1');
+source$.next('Value 1');
 
-const sub2 = $source.subscribe({
+const sub2 = source$.subscribe({
     next: v => console.log('[2] next:', v),
     error: err => console.log('[2] error:', err),
     complete: () => console.log('[2] complete!'),
 });
 
-$source.next('Value 2');
+source$.next('Value 2');
 
 // source$.error('Error Message');
-$source.complete();
+source$.complete();
 
-const sub3 = $source.subscribe({
+const sub3 = source$.subscribe({
     next: v => console.log('[3] next:', v),
     error: err => console.log('[3] error:', err),
     complete: () => console.log('[3] complete!'),
